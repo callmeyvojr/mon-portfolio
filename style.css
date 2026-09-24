@@ -1,0 +1,408 @@
+:root {
+    --paper: #F5F2E7;
+    --ink: #1B3A6B;
+    --ink-2: #2C2C28;
+    --margin: #C1442D;
+    --marker: #F0C808;
+    --grid: #D9D3C0;
+
+    --font-hand: 'Caveat', cursive;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Les images ne dépassent jamais la largeur de leur conteneur,
+   quelle que soit la taille d'écran (utile si tu ajoutes d'autres
+   images plus tard dans le site). */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    background-color: var(--paper);
+    background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: var(--ink-2);
+    font-family: var(--font-body);
+    line-height: 1.65;
+}
+
+/* la marge rouge du cahier, sur toute la hauteur de la page */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 64px;
+    width: 2px;
+    height: 100%;
+    background: var(--margin);
+    opacity: 0.55;
+    z-index: 0;
+}
+
+@media (max-width: 640px) {
+    body::before {
+        left: 28px;
+    }
+}
+
+/* ===== En-tête ===== */
+
+header {
+    position: relative;
+    z-index: 1;
+    padding: 2.5rem 1.5rem 1rem 88px;
+}
+
+.tab-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--margin);
+    margin: 0 0 0.35rem;
+}
+
+header h2 {
+    font-family: var(--font-hand);
+    font-weight: 700;
+    font-size: 2.6rem;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1;
+}
+
+/* ===== Navigation (onglets de cahier) ===== */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 0.75rem 1.5rem 0.75rem 88px;
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink-2);
+}
+
+/* Le conteneur des liens : sur PC/tablette, il se comporte EXACTEMENT
+   comme <nav> avant (ligne de "tabs" avec retour à la ligne si besoin).
+   C'est en mobile (media query plus bas) que son comportement change. */
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+/* Le bouton burger : caché par défaut, il n'apparaît qu'en mobile */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--grid);
+    border-radius: 6px;
+    color: var(--ink-2);
+    font-size: 1.3rem;
+    line-height: 1;
+    padding: 0.4rem 0.7rem;
+    cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+    color: var(--paper);
+    background: var(--margin);
+    border-color: var(--margin);
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+    header, nav {
+        padding-left: 44px;
+    }
+
+    /* On affiche le bouton burger uniquement en mobile */
+    .nav-toggle {
+        display: inline-block;
+    }
+
+    /* Les liens passent en colonne et sont repliés par défaut (max-height: 0).
+       On anime max-height + opacity : c'est ce qui donne l'effet "descend
+       élégamment" quand on ouvre le menu, plutôt qu'une apparition brute. */
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, opacity 0.25s ease;
+    }
+
+    /* Classe ajoutée/retirée par script.js quand on clique sur le burger */
+    .nav-links.is-open {
+        max-height: 400px; /* assez grand pour contenir tous les liens */
+        opacity: 1;
+        margin-top: 0.5rem;
+    }
+
+    /* En colonne, les liens prennent toute la largeur et redeviennent
+       de simples rectangles (le style "onglet" n'a plus de sens empilé) */
+    .nav-links a {
+        width: 100%;
+        border-radius: 6px;
+        border-bottom: 1px solid var(--grid);
+        text-align: center;
+    }
+}
+
+nav a {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--ink-2);
+    background: #fff;
+    border: 1px solid var(--grid);
+    border-bottom: none;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px 6px 0 0;
+    transition: color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--paper);
+    background: var(--margin);
+    transform: translateY(-2px);
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+}
+
+/* ===== Corps ===== */
+
+main {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem 88px;
+}
+
+@media (max-width: 640px) {
+    main {
+        padding-left: 44px;
+    }
+}
+
+section {
+    padding: 3.5rem 0 2.5rem;
+    border-bottom: 1px dashed var(--grid);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--margin);
+    margin: 0 0 0.5rem;
+}
+
+h1 {
+    font-family: var(--font-hand);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--ink);
+    margin: 0 0 1rem;
+    line-height: 1.15;
+}
+
+h2 {
+    font-family: var(--font-hand);
+    font-weight: 700;
+    font-size: 2.1rem;
+    color: var(--ink);
+    margin: 0 0 1.25rem;
+}
+
+h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--ink-2);
+    margin: 0 0 0.75rem;
+}
+
+h4 {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--margin);
+    margin: 1.25rem 0 0.4rem;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+a {
+    color: var(--margin);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus-visible {
+    background: var(--marker);
+    color: var(--ink-2);
+    text-decoration: none;
+}
+
+/* ===== Compétences ===== */
+
+.skill-group {
+    margin-bottom: 1.75rem;
+}
+
+.skill-group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.skill-group li {
+    position: relative;
+    padding: 0.35rem 0 0.35rem 1.6rem;
+    font-family: var(--font-body);
+}
+
+.skill-group li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--margin);
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+/* ===== Projets ===== */
+
+.project-card {
+    background: #fff;
+    border: 1px solid var(--grid);
+    border-left: 4px solid var(--margin);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+}
+
+.project-card h3 {
+    font-family: var(--font-hand);
+    font-size: 1.6rem;
+    color: var(--ink);
+}
+
+/* ===== Contact ===== */
+
+.contact-line {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+}
+
+/* ===== Pied de page ===== */
+
+footer {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1.5rem 2.5rem 88px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-2);
+    opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+    footer {
+        padding-left: 44px;
+    }
+}
+
+/* ===== Responsive : tablette (≈ entre 641px et 900px) =====
+   Ici on garde la mise en page en "colonne unique" du PC, on réduit
+   juste un peu les marges/tailles pour que ça respire mieux. */
+@media (max-width: 900px) {
+    header, nav, main, footer {
+        padding-left: 64px; /* un peu moins que les 88px du PC */
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 6vw, 2.6rem);
+    }
+}
+
+/* ===== Responsive : mobile (≤ 640px) =====
+   Ajustements complémentaires à la media query du dessus (celle qui
+   gère déjà le burger) : image de profil plus petite, texte de contact
+   qui ne déborde pas s'il est long. */
+@media (max-width: 640px) {
+    #accueil img {
+        width: 140px;
+        height: 140px;
+    }
+
+    header h2 {
+        font-size: 2.1rem;
+    }
+
+    .contact-line {
+        word-break: break-word; /* évite qu'un email/numéro long ne déborde */
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+}
+
+/* ===== Accessibilité ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    * {
+        transition: none !important;
+    }
+}
+
+#accueil img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
