@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /* ===== Carnet d'apprentissage — style.css =====
    Palette :
    --paper   #F5F2E7  fond papier
@@ -10,7 +8,6 @@
    --grid    #D9D3C0  lignes du quadrillage
 */
 
->>>>>>> 0c65e63d4c05e9dd2f45639ae766ed5e4aa3a53d
 :root {
     --paper: #F5F2E7;
     --ink: #1B3A6B;
@@ -32,12 +29,9 @@ html {
     scroll-behavior: smooth;
 }
 
-<<<<<<< HEAD
-=======
 /* Sécurité anti-débordement horizontal : si un élément dépasse
    accidentellement la largeur de l'écran, on coupe plutôt que de
    laisser apparaître une barre de défilement horizontale. */
->>>>>>> 0c65e63d4c05e9dd2f45639ae766ed5e4aa3a53d
 html, body {
     max-width: 100%;
     overflow-x: hidden;
