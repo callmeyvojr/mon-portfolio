@@ -1,131 +1,98 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>YVES JUNIOR / Étudiant en BTS IDA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Konan Kouassi Yves Junior, étudiant en BTS IDA à IISAN Abidjan et apprenant en développement web.">
+  <meta name="theme-color" content="#101c35">
+  <title>Callmeyvo | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <header>
-        <p class="tab-label">carnet — page 01</p>
-        <h2>Yves Junior</h2>
-    </header>
-
-    <nav>
-<<<<<<< HEAD
-    
-=======
-        <!-- Bouton "burger", invisible sur PC/tablette large : voir style.css (media query mobile) -->
->>>>>>> 0c65e63d4c05e9dd2f45639ae766ed5e4aa3a53d
-        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
-            <span id="navToggleIcon">☰</span>
-        </button>
-
-     
-        <div class="nav-links" id="navLinks">
-            <a href="#accueil">Accueil</a>
-            <a href="#apropos">À propos</a>
-            <a href="#competence">Compétences</a>
-            <a href="#projets">Projets</a>
-            <a href="#contact">Contact</a>
-        </div>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">YJ</span><span>Callmeyvo<span class="brand-dot">.</span></span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks"><span id="navToggleIcon">☰</span></button>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a class="active" href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="competences.html">Compétences</a>
+      <a href="projets.html">Projets</a>
+      <a href="formation.html">Formation</a>
+      <a class="nav-contact" href="contact.html">Me contacter <span>↗</span></a>
     </nav>
+  </header>
 
-    <main>
+  <main>
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Étudiant en informatique · Abidjan</p>
+        <h1>Je construis, <span class="gradient-text">j'apprends</span><br>et je progresse.</h1>
+        <p class="hero-description">Je suis <strong>Konan Kouassi Yves Junior</strong>,  alias <strong>CALLMEYVO</strong> étudiant en BTS Informatique Développement d'Applications à IISAN. Je découvre le développement web, Python et le vibe coding, un projet après l'autre.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="projets.html">Découvrir mes projets <span>↗</span></a>
+          <a class="button button-secondary" href="apropos.html">En savoir plus</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="meta-icon">⌘</span> Développement web</span>
+          <span><span class="meta-icon">✦</span> Apprentissage continu</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-glow"></div>
+        <div class="profile-frame">
+          <img src="assets/images/KONAN KOUASSI YVES JUNIOR.png" alt="Portrait de Konan Kouassi Yves Junior" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+          <div class="profile-placeholder"><span>YJ</span><small>Ajoute ta photo dans<br>assets/images/photo-profil.png</small></div>
+        </div>
+        <div class="floating-card card-top"><span class="floating-icon">{"</span><span><strong>Code & création</strong><small>Apprendre en pratiquant</small></span></div>
+        <div class="floating-card card-bottom"><span class="floating-icon">✦</span><span><strong>En progression</strong><small>HTML · CSS · JavaScript · Python</small></span></div>
+        <div class="visual-caption">PORTFOLIO PERSONNEL <span>2026</span></div>
+      </div>
+    </section>
 
-        <section id="accueil">
-            <img src="KONAN KOUASSI YVES JUNIOR.png"
-            alt="Pnoto de profil">
-            <p class="eyebrow">01 — accueil</p>
-            <h1>Bonjour ! Je suis KONAN Kouassi Yves Junior</h1>
-            <p>Je suis étudiant en BTS Informatique Développement d'Applications à IISAN Abidjan.</p>
-            <p>Bienvenue sur mon site personnel.</p>
-        </section>
+    <section class="section-wrap intro-strip">
+      <div><span class="strip-number">01</span><p>Un étudiant curieux, qui apprend en créant.</p></div>
+      <a href="apropos.html" class="text-link">Mon parcours <span>→</span></a>
+    </section>
 
-        <section id="apropos">
-            <p class="eyebrow">02 — à propos</p>
-            <h2>À propos de moi</h2>
-<<<<<<< HEAD
-            <p>Je suis Konan Kouassi Yves Junior, né à Abobo en janvier 2009. J'ai grandi dans la petite ville de Bouaflé où j'apprends l'informatique auprès de mon père, prof de Physique. Mais c'est seulement en classe de troisième que mon intérêt pour le codage commence à naître. En seconde j'apprends le HTML, le CSS et les bases du JavaScript, qui sont d'ailleurs les langages utilisés sur cette page personnelle. Aujourd'hui, je suis un jeune étudiant de 17 ans et je suis en apprentissage sur <a href="https://openclassrooms.com">OpenClassrooms</a>.</p>
-=======
-            <p>Moi c'est Konan Kouassi Yves Junior, né à Abobo en janvier 2009. J'ai grandi dans la petite ville de Bouaflé où j'apprends l'informatique auprès de mon père, prof de Physique. Mais c'est seulement en classe de troisième que mon intérêt pour le codage commence à naître. En seconde j'apprends le HTML, le CSS et les bases du JavaScript, qui sont d'ailleurs les langages utilisés sur cette page personnelle. Aujourd'hui, je suis un jeune étudiant de 17 ans et je suis en apprentissage sur <a href="https://openclassrooms.com">OpenClassrooms</a>.</p>
->>>>>>> 0c65e63d4c05e9dd2f45639ae766ed5e4aa3a53d
-            <p>J'apprends actuellement le langage Python, qui est l'un des langages les plus faciles et les plus puissants.</p>
-        </section>
+    <section class="section-wrap home-projects">
+      <div class="section-heading">
+        <div><p class="eyebrow">QUELQUES RÉALISATIONS</p><h2>Des idées mises en pratique.</h2></div>
+        <a href="projets.html" class="text-link">Tous les projets <span>→</span></a>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <a class="project-image" href="https://callmeyvojr.github.io/agrotech/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/agrotech.png" alt="Aperçu du projet Agrotech" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+            <span class="image-placeholder"><span>APERÇU DU PROJET</span><small>Ajoute assets/images/agrotech.png</small></span>
+            <span class="image-arrow">↗</span>
+          </a>
+          <div class="project-content"><p class="project-type">SITE WEB · AGRICULTURE</p><h3>Agrotech</h3><p>Une plateforme agricole virtuelle réalisée pour présenter un projet autour du secteur agricole.</p><a class="text-link" href="https://callmeyvojr.github.io/agrotech/" target="_blank" rel="noopener noreferrer">Voir le site <span>→</span></a></div>
+        </article>
+        <article class="project-card">
+          <a class="project-image project-image-alt" href="https://callmeyvojr.github.io/html_et_css/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/html-css.png" alt="Aperçu du projet HTML et CSS" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+            <span class="image-placeholder"><span>APERÇU DU PROJET</span><small>Ajoute assets/images/html-css.png</small></span>
+            <span class="image-arrow">↗</span>
+          </a>
+          <div class="project-content"><p class="project-type">APPRENTISSAGE · HTML / CSS</p><h3>Comprendre HTML et CSS</h3><p>Un site conçu pour mettre en pratique les bases de la structure HTML et de la mise en forme CSS.</p><a class="text-link" href="https://callmeyvojr.github.io/html_et_css/" target="_blank" rel="noopener noreferrer">Voir le site <span>→</span></a></div>
+        </article>
+      </div>
+    </section>
 
-        <section id="competence">
-            <p class="eyebrow">03 — compétences</p>
-            <h2>Mes compétences</h2>
+    <section class="section-wrap learning-banner">
+      <div><p class="eyebrow">CE QUE J'EXPLORE EN CE MOMENT</p><h2>Du code, des essais et beaucoup de curiosité.</h2><p>Je consolide mes bases en développement et je découvre le vibe coding : utiliser des outils d'IA pour explorer des idées, prototyper et apprendre à construire des applications.</p></div>
+      <a class="button button-light" href="competences.html">Voir mes compétences <span>→</span></a>
+    </section>
+  </main>
 
-            <div class="skill-group">
-                <h3>1. Développement web</h3>
-                <ul>
-                    <li>Maîtrise des bases du HTML</li>
-                    <li>Maîtrise des bases du CSS</li>
-                    <li>Maîtrise des bases du JavaScript</li>
-                </ul>
-            </div>
-
-            <div class="skill-group">
-                <h3>2. Outils numériques</h3>
-                <ul>
-                    <li>Microsoft Word</li>
-                    <li>Microsoft PowerPoint</li>
-                    <li>Canva</li>
-                    <li>CapCut</li>
-                </ul>
-            </div>
-
-            <div class="skill-group">
-                <h3>3. Mes qualités</h3>
-                <ul>
-                    <li>Travail d'équipe</li>
-                    <li>Capacité d'apprentissage rapide</li>
-                    <li>Motivation</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projets">
-            <p class="eyebrow">04 — projets</p>
-            <h2>Mes projets</h2>
-
-            <article class="project-card">
-                <h3>Site vitrine personnel</h3>
-
-                <h4>Description du projet</h4>
-                <p>Je construis ce site pour présenter mon profil d'étudiant en BTS IDA.</p>
-
-                <h4>Technologies</h4>
-                <p>J'ai utilisé le langage HTML pour la structure et le CSS pour le visuel.</p>
-
-                <h4>Objectif</h4>
-                <p>L'objectif de ce site est de mettre en pratique mes connaissances en création de site web, mais aussi de partager mes différents projets.</p>
-            </article>
-        </section>
-
-        <section id="contact">
-            <p class="eyebrow">05 — contact</p>
-            <h2>Me contacter</h2>
-
-            <p class="contact-line">Téléphone : <a href="tel:+2250718767611">+225 07 18 76 76 11</a></p>
-            <p class="contact-line">Email : <a href="mailto:kyves4054@gmail.com">kyves4054@gmail.com</a></p>
-            <p class="contact-line">Facebook : <a href="https://www.facebook.com/share/1HrniDoZ5z">Yves-Junior Konan</a></p>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Konan Kouassi Yves Junior — fait main, ligne par ligne.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <footer class="site-footer">
+    <a class="brand" href="index.html"><span class="brand-mark">YJ</span><span>Callmeyvo<span class="brand-dot">.</span></span></a>
+    <p>Construit avec curiosité, ligne après ligne.</p>
+    <span>© 2026 - Callmeyvo</span>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
